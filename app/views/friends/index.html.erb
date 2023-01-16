@@ -1,0 +1,64 @@
+<% if user_signed_in? %>
+
+
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between flex-wrap mb-6">
+
+
+
+      </div>
+
+      <table class="table table-striped table-border table-hover">
+        <thead class="table-dark">
+          <tr>
+
+                      <th class="border border-slate-300 dark:border-slate-400 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Name</th>
+                    
+                      <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Email</th>
+                      <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Phone</th>
+                      <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Instagram</th>   
+
+              <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left"></th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @friends.each do |friend| %>
+          <%= content_tag :tr, id: dom_id(friend), class: dom_class(friend) do %>
+          <% if friend.user == current_user %>
+
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                  <%= link_to friend.first_name + ' ' + friend.last_name, friend %> 
+                     </td>
+                  
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= friend.email %></td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= friend.phone %></td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= friend.instagram %></td>
+
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+            <%= button_to 'Delete', friend, method: :delete, class: "btn btn-outline-danger btn-sm", data: { turbo_confirm: 'Are you sure?' } %></td>
+
+          <% end %>
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
+        <%= link_to new_friend_path, class:"btn btn-dark" do %>
+        Add New Friend
+        <% end %>
+
+
+    </div>
+    </div>
+
+<% else %>
+
+        <h1 class='text-center'>Alan Ireland Welcomes YOU!</h1>
+        <h2 class='text-center'>Welcome to my webpage. This is my first Rails project!</h2>
+        <br/>
+        <h4 class='text-center'> O, for a Muse of fire that would ascend the brightest Heaven of Invention!</h4>
+
+        <p class="text-center">.</p>
+
+<% end %>

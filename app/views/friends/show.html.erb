@@ -1,0 +1,22 @@
+
+<div class=" border rounded p-3 mb-2 bg-light text-dark">  
+   
+  <h1 class="display-4"><%= @friend.first_name %> <%= @friend.last_name %></h1>
+    
+  <p class="lead"><%= @friend.email %> | <%= @friend.phone %> | <%= @friend.instagram %></p>
+  <hr class="my-4">
+<br/> 
+    
+  <%= link_to friends_path, class:"btn btn-dark" do %>
+      Friend List
+      <% end %>
+    
+    
+      <%= link_to edit_friend_path(@friend), class:"btn btn-dark" do %>
+      Edit
+    <br/>
+      <% end %>
+<br/>
+      
+
+</div>
