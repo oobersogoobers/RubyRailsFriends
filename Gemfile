@@ -5,7 +5,6 @@ ruby "3.1.3"
 
 gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
-
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -29,7 +28,7 @@ group :development do
 end
 
 group :production do
-    gem 'pg', '~> 1.4', '>= 1.4.5'
+    gem 'pg', '~> 1.4'
 
 end
 
@@ -39,3 +38,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+heroku pg:reset DATABASE_URL
