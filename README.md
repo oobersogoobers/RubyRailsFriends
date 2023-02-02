@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Hello my name is Alan Ireland and I want to get a job with SRA.
+
+This is my Ruby on Rails Friends List App!
+
