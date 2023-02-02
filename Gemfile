@@ -5,7 +5,7 @@ ruby "3.1.3"
 
 gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
-gem "mysql2", "~> 0.5"
+
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -23,8 +23,14 @@ end
 
 group :development do
   gem "web-console"
+  gem "mysql2", "~> 0.5"    
 
   
+end
+
+group :production do
+    gem 'pg', '~> 1.4', '>= 1.4.5'
+
 end
 
 group :test do
