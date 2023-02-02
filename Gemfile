@@ -38,6 +38,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-
-heroku pg:reset DATABASE_URL
